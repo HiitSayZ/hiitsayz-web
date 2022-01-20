@@ -28,9 +28,9 @@ export default function Home() {
         <h2>{t.subtitle}</h2>
       </div>
       <div className="socials">
-      <a target="_blank" href="https://twitter.com/HiitSayZ"><Image src="/twitter.png" width={46} height={46} /></a>
-      <a target="_blank" href="https://www.linkedin.com/in/alexandre-ladouceur/"><Image src="/linkedin.png" width={46} height={46} /></a>
-      <a target="_blank" href="https://www.facebook.com/alexandreladou"><Image src="/facebook.png" width={34} height={34} /></a>
+      <a target="_blank" rel="noreferrer" href="https://twitter.com/HiitSayZ"><Image src="/twitter.png" width={46} height={46} /></a>
+      <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/alexandre-ladouceur/"><Image src="/linkedin.png" width={46} height={46} /></a>
+      <a target="_blank" rel="noreferrer" href="https://www.facebook.com/alexandreladou"><Image src="/facebook.png" width={34} height={34} /></a>
       </div>
 
       <div className="grid">
