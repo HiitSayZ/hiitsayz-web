@@ -36,19 +36,19 @@ export default function Home() {
       <div className="grid">
           <div className="container_life">
               <h1>{t.lifeexperience}</h1>
-              <div class="carousel-container">
-                <div class="carousel">
-                  <div class="image-one"></div>
-                  <div class="image-two"></div>
-                  <div class="image-three"></div>
-                  <div class="image-four"></div>
+              <div className="carousel-container">
+                <div className="carousel">
+                  <div className="image-one"></div>
+                  <div className="image-two"></div>
+                  <div className="image-three"></div>
+                  <div className="image-four"></div>
                 </div>
               </div>
           </div>
   
           <div className="container">
                 <h1>{t.user_profile}</h1>
-                <img className="profil_image" src="/alex.png" width={300} height={281} />
+                <img className="profil_image" src="/alex.png" alt="profile_alex" width={300} height={281} />
                 <h2>Alexandre Ladouceur</h2>
                 <span>{t.alex_title}</span>
                 <p>{t.alex_description}</p>
