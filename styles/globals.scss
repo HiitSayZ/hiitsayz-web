@@ -70,8 +70,8 @@ main {
   }
 }
 
-.language select::-ms-expand {
-  display: none;
+select:focus {
+  outline: none;
 }
 
 .footer {
