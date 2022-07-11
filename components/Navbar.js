@@ -16,21 +16,15 @@ function Navbar() {
 
     return (
         <>
-        <div className="navbar">
-            <div className="choix">
-                <Link href="/"><p>{t.about_me}</p></Link>
-                <Link href="/socials"><p>{t.socials}</p></Link>
-            </div>
-
-            <div className="language">
-                <select
-                    onChange={changeLanguage}
-                    defaultValue={locale}>
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                </select> 
-            </div>
-        </div>
+        <header>
+        <a href="#" class="logo">HiitSayZ</a>
+        <ul>
+            <li><a href="#" id="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        </header>
 
         </>
     )

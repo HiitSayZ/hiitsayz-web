@@ -10,6 +10,25 @@ export default function Home() {
   const { locale } = router;
   const t = locale === 'en' ? en : fr;
 
+  let stars = document.getElementById('stars');
+  let moon = document.getElementById('moon');
+  let mountains_behind = document.getElementById('mountains_behind');
+  //let mountains_front = document.getElementById('mountains_front');
+  let name = document.getElementById('name');
+  let explore = document.getElementById('explore');
+  let header = document.querySelector('header');
+
+  window.addEventListener('scroll', function() {
+    let value = window.scrollY;
+    stars.style.left = value * 0.25 + 'px';
+    moon.style.top = value * 1.05 + 'px';
+    mountains_behind.style.top = value * 0.5 + 'px';
+    name.style.marginRight = value * 3 + 'px';
+    name.style.marginTop = value * 1.5 + 'px';
+    explore.style.marginTop = value * 1.5 + 'px';
+    header.style.top = value * 0.5 + 'px';
+  })
+
   return (
     <main>
       <Head>
@@ -23,75 +42,30 @@ export default function Home() {
       <meta name="theme-color" content="#ffffff"/>
       </Head>
 
-      <div className="title">
-        <h1>Alexandre Ladouceur</h1>
-        <h2>{t.subtitle}</h2>
-      </div>
-      <div className="socials">
-      <a target="_blank" rel="noreferrer" href="https://twitter.com/HiitSayZ"><Image src="/twitter.png" width={46} height={46} /></a>
-      <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/alexandre-ladouceur/"><Image src="/linkedin.png" width={46} height={46} /></a>
-      <a target="_blank" rel="noreferrer" href="https://www.facebook.com/alexandreladou"><Image src="/facebook.png" width={34} height={34} /></a>
-      </div>
-
-      <div className="grid">
-          <div className="container_life">
-              <h1>{t.lifeexperience}</h1>
-              <div className="carousel-container">
-                <div className="carousel">
-                  <div className="image-one"></div>
-                  <div className="image-two"></div>
-                  <div className="image-three"></div>
-                  <div className="image-four"></div>
-                </div>
-              </div>
-          </div>
-  
-          <div className="container">
-                <h1>{t.user_profile}</h1>
-                <img className="profil_image" src="/alex.png" alt="profile_alex" width={300} height={281} />
-                <h2>Alexandre Ladouceur</h2>
-                <span>{t.alex_title}</span>
-                <p>{t.alex_description}</p>
-          </div>
-      </div>
-
-      <div className="line">
+      <body>
+        <section>
+        <img src="stars.png" id="stars" alt="stars" />
+        <img src="moon.png" id="moon" alt="moon" />
+        <img
+          src="images/mountains_behind.png"
+          id="mountains_behind"
+          alt="mountains_behind"
+        />
+        <h2 id="name">HiitSayZ</h2>
+        <a href="#bio" id="explore">Explore</a>
+        <img
+          src="mountains_front.png"
+          id="mountains_front"
+          alt="mountains_behind"
+        />
+        </section>
+        <div class="sec">
+          <h2 id="bio">Ma Biographie</h2>
+          <p>asdasdasdasd</p>
         
-      </div>
-
-      <div className="container_coding">
-              <h1>{t.codingexperience}</h1>
-              <div className="proglangs">
-                <div className="proglang">
-                  <h2>Java</h2>
-                  <img src="proglanguages/java.png" alt="Java" width={100}/>
-                </div>
-                <div className="proglang">
-                  <h2>Next.JS</h2>
-                  <img src="proglanguages/nextjs.png" alt="Next.JS" width={120}/>
-                </div>
-                <div className="proglang">
-                  <h2>C# (CSharp)</h2>
-                  <img src="proglanguages/csharp.png" alt="C#" width={150}/>
-                </div>
-                <div className="proglang">
-                  <h2>Angular</h2>
-                  <img src="proglanguages/angular.png" alt="Angular" width={100}/>
-                </div>
-                <div className="proglang">
-                  <h2>JavaScript</h2>
-                  <img src="proglanguages/javascript.png" alt="JS" width={100}/>
-                </div>
-                <div className="proglang">
-                  <h2>HTML, CSS</h2>
-                  <img src="proglanguages/html.png" alt="HTML" width={180}/>
-                </div>
-                <div className="proglang">
-                  <h2>SCSS, SASS</h2>
-                  <img src="proglanguages/sass.png" alt="SASS" width={100}/>
-                </div>
-              </div>
-          </div>
+        </div>
+        
+      </body>
 
       
       
