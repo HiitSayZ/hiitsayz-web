@@ -44,19 +44,19 @@ export default function Home() {
 
       <body>
         <section>
-        <img src="stars.png" id="stars" alt="stars" />
-        <img src="moon.png" id="moon" alt="moon" />
+        <img src="/images/stars.png" id="stars" alt="stars" />
+        <img src="/images/moon.png" id="moon" alt="moon" />
         <img
-          src="images/mountains_behind.png"
+          src="/images/mountains_behind.png"
           id="mountains_behind"
           alt="mountains_behind"
         />
         <h2 id="name">HiitSayZ</h2>
         <a href="#bio" id="explore">Explore</a>
         <img
-          src="mountains_front.png"
+          src="/images/mountains_front.png"
           id="mountains_front"
-          alt="mountains_behind"
+          alt="mountains_front"
         />
         </section>
         <div class="sec">
