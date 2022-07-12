@@ -3,7 +3,7 @@ import '../styles/globals.scss'
 import '../styles/socials.scss'
 import '../styles/aboutme.scss'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {  
   return (
     <>
     <Layout>
@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }) {
     </Layout>
     </>
   )
+
 }
 
 export default MyApp

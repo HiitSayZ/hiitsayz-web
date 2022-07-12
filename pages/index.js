@@ -1,6 +1,9 @@
+import { NextScript } from 'next/document';
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import Script from 'next/script';
 import en from '../lib/en';
 import fr from '../lib/fr';
 import styles from '../styles/Home.module.scss'
@@ -9,25 +12,30 @@ export default function Home() {
   const router = useRouter();
   const { locale } = router;
   const t = locale === 'en' ? en : fr;
+  
+  useEffect(() => {
 
-  let stars = document.getElementById('stars');
-  let moon = document.getElementById('moon');
-  let mountains_behind = document.getElementById('mountains_behind');
-  //let mountains_front = document.getElementById('mountains_front');
-  let name = document.getElementById('name');
-  let explore = document.getElementById('explore');
-  let header = document.querySelector('header');
+    let stars = document.getElementById('stars');
+    let moon = document.getElementById('moon');
+    let mountains_behind = document.getElementById('mountains_behind');
+    //let mountains_front = document.getElementById('mountains_front');
+    let name = document.getElementById('name');
+    let explore = document.getElementById('explore');
+    let header = document.querySelector('header');
+  
+    window.addEventListener('scroll', function() {
+      let value = window.scrollY;
+      stars.style.left = value * 0.25 + 'px';
+      moon.style.top = value * 1.05 + 'px';
+      mountains_behind.style.top = value * 0.5 + 'px';
+      name.style.marginRight = value * 3 + 'px';
+      name.style.marginTop = value * 1.5 + 'px';
+      explore.style.marginTop = value * 1.5 + 'px';
+      header.style.top = value * 0.5 + 'px';
+    })
 
-  window.addEventListener('scroll', function() {
-    let value = window.scrollY;
-    stars.style.left = value * 0.25 + 'px';
-    moon.style.top = value * 1.05 + 'px';
-    mountains_behind.style.top = value * 0.5 + 'px';
-    name.style.marginRight = value * 3 + 'px';
-    name.style.marginTop = value * 1.5 + 'px';
-    explore.style.marginTop = value * 1.5 + 'px';
-    header.style.top = value * 0.5 + 'px';
-  })
+
+}, [])
 
   return (
     <main>
@@ -59,16 +67,40 @@ export default function Home() {
           alt="mountains_front"
         />
         </section>
-        <div class="sec">
+        <div className="sec">
           <h2 id="bio">Ma Biographie</h2>
           <p>asdasdasdasd</p>
         
         </div>
         
       </body>
-
-      
-      
+        
     </main>
+
   )
+
+}
+
+export function getElements() {
+  let stars = document.getElementById('stars');
+  let moon = document.getElementById('moon');
+  let mountains_behind = document.getElementById('mountains_behind');
+  //let mountains_front = document.getElementById('mountains_front');
+  let name = document.getElementById('name');
+  let explore = document.getElementById('explore');
+  let header = document.querySelector('header');
+
+  window.addEventListener('scroll', function() {
+    let value = window.scrollY;
+    stars.style.left = value * 0.25 + 'px';
+    moon.style.top = value * 1.05 + 'px';
+    mountains_behind.style.top = value * 0.5 + 'px';
+    name.style.marginRight = value * 3 + 'px';
+    name.style.marginTop = value * 1.5 + 'px';
+    explore.style.marginTop = value * 1.5 + 'px';
+    header.style.top = value * 0.5 + 'px';
+  })
+
+
+
 }
